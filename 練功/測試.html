@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 題目1:找出任意二數最大值
+        // var n1=5;
+        // var n2=3;
+        // var max=n1;
+
+        // if(n1 < n2){
+        //     max=n2;
+        // }
+
+        // console.log(`max=${max}`);
+
+
+        // // 題目2:水費查詢程式
+        // var x1 = 7.35;  //x1~x4為不同度數的級距
+        // var x2 = 9.45;
+        // var x3 = 11.55;
+        // var x4 = 12.075;
+        // var x = x1;   //判斷完的級距為
+        // var water = window.prompt("請輸入用水度數");  //度數
+        // var money = 0;  //金額
+
+        // if (1 <= water & water <= 10) {
+        //     x = x1;
+        // } else if (11 <= water & water <= 30) {
+        //     x = x2;
+        // } else if (31 <= water & water <= 50) {
+        //     x = x3;
+        // } else if (water > 50) {
+        //     x = x4;
+        // } else {
+        //     x = 0;
+
+        // }
+
+        // if (x == 0) {
+        //     console.log("輸入錯誤"); //防呆
+        // } else {
+        //     money = Math.round(water * x);
+        //     console.log(`用水度數:${water}`);
+        //     console.log(`每度為:${x}`);
+        //     console.log(`實付水費為:${money}`);
+        // }
+
+        // 題目3:分數等級程式
+        // var score = window.prompt("請輸入分數"); 
+        // var y=""; //等級
+
+        // if (80<=score&score<=100) {
+        //     y="甲";
+        // } else if (70<=score&score<=79) {
+        //     y="乙";
+        // } else if (60<=score&score<=69) {
+        //     y="丙";
+        // } else if (0<=score&score<=59) {
+        //     y="丁";
+        // } else {
+        //     y="0";
+        // }
+
+        // if(y==="0"){
+        // console.log("輸入錯誤");    
+        // }else{
+        //     console.log(`分數：${score}=> 成績等級為${y}等`); 
+        // }
+
+        // 題目4:票價費用試算程式
+        var type = window.prompt("請輸入票價種類(1-3):");
+        var ticket = Number(window.prompt("請輸入票價種類(1-3):"));
+        var price = 500;
+
+        switch (type) {
+            case "1":
+                price *= ticket;
+                console.log(`全票${ticket}張，票價為：${price}元`);
+                break;
+            case "2":
+                price *= ticket;
+                price *= 0.8;
+                console.log(`優待票${ticket}張，票價為：${price}元`);
+                break;
+            case "3":
+                price *= ticket;
+                price *= 0.56;
+                console.log(`敬老票${ticket}張，票價為：${price}元`);
+                break;
+        }
+    </script>
+
+</body>
+
+</html>
