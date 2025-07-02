@@ -1,33 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         // 題目3:分數等級程式
-        var score = window.prompt("請輸入分數"); 
-        var y=""; //等級
+        var intscore = window.prompt("請輸入分數");
+        var y = ""; //等級
 
-        if (80<=score&score<=100) {
-            y="甲";
-        } else if (70<=score&score<=79) {
-            y="乙";
-        } else if (60<=score&score<=69) {
-            y="丙";
-        } else if (0<=score&score<=59) {
-            y="丁";
+        if (intscore < 0 || intscore > 100) {
+            console.log("err:0-100");
+        } else if (intscore >= 80 && intscore <= 100) {
+            y = "甲";
+        } else if (intscore >= 70 && intscore <= 79) {
+            y = "乙";
+        } else if (intscore >= 60 && intscore <= 69) {
+            y = "丙";
+        } else if (intscore >= 0 && intscore <= 59) {
+            y = "丁";
         } else {
-            y="0";
+            console.log("非數字，輸入有誤");
         }
 
-        if(y==="0"){
-        console.log("輸入錯誤");    //防呆
-        }else{
-            console.log(`分數：${score}=> 成績等級為${y}等`); 
+        if (y != "") {
+            console.log(`分數：${intscore}=> 成績等級為${y}等`);
         }
+
+          var intScore = 101;
+        var strLevel = "";
+
+        // 老師寫法
+        // if (intScore < 0 || intScore > 100) {
+        //     console.log("err!不是有效數值範圍");
+        // } else {
+        //     if (intScore >= 80 && intScore <= 100) {
+        //         strLevel = "甲";
+        //     } else if (intScore >= 70 && intScore <= 79) {
+        //         strLevel = "乙";
+        //     } else if (intScore >= 60 && intScore <= 69) {
+        //         strLevel = "丙";
+        //     } else {
+        //         strLevel = "丁";
+        //     }
+        //     console.log(`分數：${intScore} => 成績等級為${strLevel}等`);
+        // }
+
     </script>
 </body>
+
 </html>

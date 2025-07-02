@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         // 題目4:票價費用試算程式
         var type = window.prompt("請輸入票價種類(1-3):");
-        var ticket = Number(window.prompt("請輸入票價張數(1-3):"));
+        var ticket = Number(window.prompt("請輸入票價張數:"));
+        var ticketname = "";
         var price = 500;
 
         switch (type) {
+            default:
+                console.log("無此票價種類");
+                break;
             case "1":
                 price *= ticket;
-                console.log(`全票${ticket}張，票價為：${price}元`);
+                ticketname = "全票";
                 break;
             case "2":
                 price *= ticket;
                 price *= 0.8;
-                console.log(`優待票${ticket}張，票價為：${price}元`);
+                ticketname = "優待票";
                 break;
             case "3":
                 price *= ticket;
                 price *= 0.56;
-                console.log(`敬老票${ticket}張，票價為：${price}元`);
+                ticketname = "敬老票";
                 break;
+        }
+
+        if (ticketname != "") {
+            console.log(`${ticketname}${ticket}張，票價為：${price}元`);
         }
     </script>
 </body>
+
 </html>

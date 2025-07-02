@@ -10,31 +10,31 @@
          // 題目2:水費查詢程式
 
          //x1~x4為不同度數的級距對應的金額
-        var x1 = 7.35;  
+        var water = window.prompt("請輸入用水度數");
+        var x1 = 7.35;  //對應的金額可以直接寫進去IF裡，不用再寫變數
         var x2 = 9.45;
         var x3 = 11.55;
         var x4 = 12.075;
-        var x = x1;   //判斷完的對應的金額
-        var water = window.prompt("請輸入用水度數");
+        var x = 0;   //判斷完的對應的金額
         var money = 0;  //金額
 
-        if (1 <= water & water <= 10) {
-            x = x1;
-        } else if (11 <= water & water <= 30) {
-            x = x2;
-        } else if (31 <= water & water <= 50) {
-            x = x3;
+        if (water >= 1 && water <= 10) {
+            x = x1; //x=7.35
+        } else if (water >=11 && water <= 30) {
+            x = x2; //x=9.45
+        } else if (water >= 31 && water <= 50) {
+            x = x3; //x=11.55
         } else if (water > 50) {
-            x = x4;
+            x = x4; //x=12.075
         } else {
             x = 0;
 
         }
 
         if (x == 0) {
-            console.log("輸入錯誤"); //防呆
+            console.log("輸入錯誤"); //防呆，且金額寫在上一個if裡，這行可直接放到上一個判斷的else裡
         } else {
-            money = Math.round(water * x);
+            money = Math.round(water * x); //這裡的判斷就直接用if即可
             console.log(`用水度數:${water}`);
             console.log(`每度為:${x}`);
             console.log(`實付水費為:${money}`);
