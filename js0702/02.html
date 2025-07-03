@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //統計1-100的奇數和(遞增)
+        var ans1 = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 2 == 1) {
+                ans1 += i;
+            }
+        }
+        document.write(`1-100的奇數和為：${ans1}<br>`);
+
+        //統計100-1的偶數和 (遞減)
+        var ans2 = 0;
+        for (var i = 100; i >= 1; i--) {
+            if (i % 2 == 0) {
+                ans2 += i;
+            }
+        }
+        document.write(`100-1的偶數和為：${ans2}<br>`);
+
+        // 統計1-100之間，同時是3的倍數和5的倍數和
+        var ans3 = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 == 0) {
+                if (i % 5 == 0) {
+                    if (i + 15 > 100) {
+                        ans3 += i;
+                        document.write(i + "=");
+                    } else {
+                        ans3 += i;
+                        document.write(i + "+");
+                    }
+                }
+            }
+        }
+        document.write(`${ans3}<br>`);
+
+        // 陣列
+        var ans4 = 0;
+        var arr4 = [];
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                ans4 += i;
+                arr4.push(i);
+            }
+        }
+
+        for (var x = 0; x < arr4.length; x++) {
+            if (arr4[x] == arr4[arr4.length - 1]) {
+                document.write(arr4[x] + "=" + ans4);
+
+            } else {
+                document.write(arr4[x] + "+");
+            }
+        }
+    </script>
+</body>
+
+</html>

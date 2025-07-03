@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //星星
+        for(var i=1;i<=5;i++){
+            for(var x=0;x<i;x++){
+                document.write("*");
+            }
+            document.write("<br>")
+        } 
+
+        // 九九乘法表
+        
+        for(var i =1;i<=9;i++){
+            for(var x =1;x<=9;x++){
+                
+                // 網頁不允許連續半形空格
+                // 連續多個半形空白是為一個
+                // 若要多個空白，可以使用全形空白 or " &nbsp "<建議
+                if(i*x<10){
+                    document.write(`${i}*${x}=0${i*x}&nbsp;&nbsp;&nbsp`);    
+                }else{
+                    document.write(`${i}*${x}=${i*x}&nbsp;&nbsp;&nbsp`);
+                }
+            }
+            document.write("<br>")
+        }
+    </script>
+</body>
+</html>
