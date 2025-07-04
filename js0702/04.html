@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <label for="">數值1</label>
+    <!-- label 標籤 -->
+    <label for="n1">數值1</label>
+    <!-- input 文字方塊 -->
     <input type="number" id="n1">
     <br>
-    <label for="">數值2</label>
+    <button onclick="tot()">+</button>
+    <br>
+    <label for="n2">數值2</label>
     <input type="number" id="n2">
-    <button onclick="tot()">加總</button>
     <br>
     <p id="result">合計結果</p>
     <script>
         // 建立一個加總函式
-        function tot(){
+        function tot() {
             // 取得數值1&2的位置(getElementById)&內容(.value)
-            var n1=Number(document.getElementById("n1").value);
-            var n2=Number(document.getElementById("n2").value);
-            // 取得數值1的內容，並且顯示在指定的位置
-            document.getElementById("result").textContent=n1+n2;
+            var n1 = document.getElementById("n1");
+            var n2 = document.getElementById("n2");
+
+            // 字串轉數值=>parseInt(字串資料)=>不會改變原本變數的資料型態
+            console.log(parseInt(n1.value));
+            console.log(parseInt(n2.value));
+
+            // *補充:數值轉字串=>數值資料.toString
+            var strNum=123;
+            console.log("數值轉字串=>"+typeof strNum.toString());
+
+            // 取得數值1&2的內容，並且顯示在指定的位置(textContent)
+            document.getElementById("result").textContent = parseInt(n1.value) + parseInt(n2.value);
         }
     </script>
 </body>
+
 </html>

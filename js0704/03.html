@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>for</h1>
+    <script>
+        // 1+2+3+4+5=?
+        // for
+        var s1 = 0;
+        for (i = 1; i <= 5; i++) {
+            s1 += i;
+        }
+        document.write(`1+2+3+4+5=${s1}`)
+    </script>
+    <hr>
+    <h2>while</h2>
+    <script>
+        var s2 = 0;
+        var num = 1;
+        while (num <= 5) {
+            s2 += num;
+            num += 1;
+        }
+        document.write(`1+2+3+4+5=${s2}`)
+    </script>
+    <hr>
+
+    <h2>do - while</h2>
+    <script>
+        // do - while => 先執行再檢查
+        var s3 = 0;
+        var num = 1;
+        do {
+            s3 += num;
+            num++;
+        } while (num <= 5);
+        document.write(`1+2+3+4+5=${s3}`)
+    </script>
+    <hr>
+
+    <h2>循環輸入-判斷</h2>
+
+    <script>
+        loop1: do {
+            var month = prompt("請輸入月份");
+
+            // 按取消，資料會回傳null(不管有無輸入資料)
+            // 判斷資料回傳null時會結束迴圈
+            if (month == null) {
+
+                break;  //結束迴圈
+
+            } else if (month == "") {
+
+                alert("月份不能空白，請重新輸入");
+                continue loop1;   //忽略以下程式敘述，回到迴圈開始的位置(或使用label標記迴圈的位置)
+
+            } else if (month < 1 || month > 12) {
+
+                alert("月份範圍錯誤，請重新輸入");
+                continue loop1;
+
+            } else if (isNaN(Number(month))) { //判斷是否是"非數值"的資料(包含文字、符號)
+
+                alert("非數值，請重新輸入");
+                continue loop1;
+
+            }
+
+            alert("輸入的月份為:" + month)
+
+        } while (1);
+    </script>
+</body>
+
+</html>

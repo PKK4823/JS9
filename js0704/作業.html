@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result">結果</p>
+    <script>
+        var pass=0;
+        var fail=0;
+        var total=0;
+        var result = document.getElementById("result");
+
+        do{
+            var score=prompt("請輸入分數");
+
+            if(score==-1 || score==null){
+
+                break;
+
+            }else if(score<=-2 || score>=101){
+
+                alert(" err！不是有效範圍0-100，請重新輸入！");
+                continue;
+
+            }else if(isNaN(Number(score))){
+
+                alert("err！非數字，請重新輸入！");
+                continue;
+
+            }else if(score==""){
+
+                alert("不能輸入空白，請重新輸入");
+                continue;
+
+            }else if(score>=0 && score <=100){
+
+                if(score>=60){
+                    pass++;
+                    total+=Number(score);
+                    console.log(total);
+                }else if(score<=59){
+                    fail++;
+                    total+=Number(score);
+                    console.log(total);
+                }
+                continue;
+            }
+
+        }while(1);
+
+    result.innerText =`●及格人數：${pass}人\n●不及格人數：${fail}人\n●全班總分：${total}分\n●全班平均：${total/(pass+fail)}分`;
+
+    </script>
+</body>
+</html>

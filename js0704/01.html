@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="n1">數值1</label>
+    <input type="number" id="n1">
+    <br>
+    <button onclick="tot()">+</button>
+    <button onclick="minus()">-</button>
+    <button onclick="times()">*</button>
+    <button onclick="division()">/</button>
+    <br>
+    <label for="n2">數值2</label>
+    <input type="number" id="n2">
+    <br>
+    <p id="result">合計結果</p>
+
+    <script>
+        var n1 = document.getElementById("n1");
+        var n2 = document.getElementById("n2");
+        var result = document.getElementById("result");
+        
+
+        function tot() {
+            result.textContent = parseInt(n1.value) + parseInt(n2.value);
+        }
+
+
+        function minus() {
+            result.textContent = parseInt(n1.value) - parseInt(n2.value);
+        }
+
+
+        function times() {
+            result.textContent = parseInt(n1.value) * parseInt(n2.value);
+        }
+
+
+        function division() {
+            result.textContent = (parseInt(n1.value) / parseInt(n2.value)).toFixed(2);
+        }
+    </script>
+
+</body>
+
+</html>
