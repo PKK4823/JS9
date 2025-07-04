@@ -13,28 +13,37 @@
         var pass = 0;
         var fail = 0;
         var total = 0;
+        var avg=0;
         var result = document.getElementById("result");
 
         do {
             var score = prompt("請輸入分數");
 
-            if (score == -1 || score == null) {
+            if (score == -1 ) {
 
                 break;
 
-            } else if (score <= -2 || score >= 101) {
+            }else if(score == null){ //取消歸零
 
-                alert(" err！不是有效範圍0-100，請重新輸入！");
-                continue;
-
+                pass = 0;
+                fail = 0;
+                total = 0;
+                alert("您按了取消，即將結束輸入！");
+                break;
+                
             } else if (isNaN(Number(score))) {
-
+                
                 alert("err！非數字，請重新輸入！");
                 continue;
-
-            } else if (score == "") {
-
+                
+            } else if (score.trim() == "") { //去除資料前後的空白 => trim()
+                
                 alert("不能輸入空白，請重新輸入");
+                continue;
+                
+            }else if (score <= -2 || score >= 101) {
+
+                alert(" err！不是有效範圍0-100，請重新輸入！");
                 continue;
 
             } else if (score >= 0 && score <= 100) {
@@ -51,8 +60,12 @@
 
         } while (1);
 
-        result.innerText = `●及格人數：${pass}人\n●不及格人數：${fail}人\n●全班總分：${total}分\n●全班平均：${total / (pass + fail)}分`;
+        if((pass+fail)!=0){
+            avg=total/(pass+fail)
+        }
 
+        //result.innerHtml = `●及格人數：${pass}人<br>●不及格人數：${fail}人<br>●全班總分：${total}分<br>●全班平均：${total / (pass + fail)}分`; 
+        result.innerText = `●及格人數：${pass}人\n●不及格人數：${fail}人\n●全班總分：${total}分\n●全班平均：${avg.toFixed(2)}分`;
     </script>
 </body>
 
