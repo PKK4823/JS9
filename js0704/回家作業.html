@@ -13,53 +13,52 @@
         // 取亂數0-1之間
         // var rd =Math.random()*2; //回傳0,1
         var rd = Math.random() * 100; //回傳
-        var min = 0;
-        var max = 0;
-
-        // 顯示亂數值
-        console.log(rd);
-
-        // 去除亂數的小數(無條件捨去)
-        console.log(Math.floor(rd));
+        var min = 1;
+        var max = 100;
 
         // 去除小數後+1
         rd2 = Math.floor(rd) + 1;
 
-        loop1: for (var i = 0; i < 50; i++) {
-            var num = Number(prompt("數字"));
+        while (1) {
+            var num = parseInt(prompt("猜數字(1-100)"));
 
-            if (num > rd2) {
+            if (isNaN(num)) {
+                alert("您按了取消，即將結束");
+                break;
+            }
 
-                if (max == 0) {
+            if (num == rd2) {
+
+                alert(`${rd2}=>恭喜你猜到了!`);
+                break;
+
+            } else if (num > rd2) {
+
+                if (num < max) {
                     max = num;
-                } else if (max > num) {
-                    max = num; 
                 }
-                
-                alert(`${num}=> 太大了, 請重新輸入(提示:${min}-${max})`);
+
+                alert(`${num}=>太大了, 請重新輸入(提示:${min}-${max})`);
+                continue;
 
             } else if (num < rd2) {
 
-                if (min == 0) {
-                    min = num;
-                } else if (min > num) {
+                if (num > min) {
                     min = num;
                 }
 
-                alert(`${num}=> 太大了, 請重新輸入(提示:${min}-${max})`);
-
-            } else if (num == rd2) {
-
-                alert(`${rd2}恭喜你猜到了!`)
-                break loop1;
+                alert(`${num}=>太小了, 請重新輸入(提示:${min}-${max})`);
+                continue;
 
             } else if (num > 100 || num <= 0) {
 
-                alert("超出範圍, 請重新輸入");
+                alert("超出範圍(1-100), 請重新輸入");
+                continue;
 
             } else if (score.trim() == "") {
 
                 alert("不能輸入空白，請重新輸入");
+                continue;
 
             }
         }
