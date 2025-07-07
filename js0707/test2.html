@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 找出陣列中最大值與最小值
+        let arr1 = [5, 60, 3, 90, 33, 1, 100];
+        let min = 0;
+        let max = 0;
+
+        // 下面要分段註解，測試過一個要把上一個方法給註解掉
+        // 不然會出錯
+        // 還可以改但我想在3點前交:)
+        // 我會慢慢改
+
+        // for
+        console.log("for----");
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] > max) {
+                max = arr1[i];
+            } else if (arr1[i] < min) {
+                min = arr1[i];
+            } else {
+                min = arr1[i];
+        }
+        }
+        console.log(`max:${max} min:${min}`)
+
+        // for of
+        console.log("for of---");
+        for (let n of arr1) {
+             if (n > max) {
+                max = n;
+            } else if (n < min) {
+                min = n;
+            } else {
+                min = n;
+        }
+        }
+        console.log(`max:${max} min:${min}`)
+
+
+        // forEach
+        console.log("forEach---");
+        arr1.forEach((n) => {
+            if (n > max) {
+                max = n;
+            } else if (n < min) {
+                min = n;
+            } else {
+                min = n;
+        }
+        })
+        console.log(`max:${max} min:${min}`)
+
+    </script>
+</body>
+
+</html>
