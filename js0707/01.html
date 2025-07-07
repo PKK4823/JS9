@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[];
+
+        // (3)[1,2,3]
+        let arr2=[1,2,3];
+        console.log(arr2);
+        arr2[1]=5; //將陣列2的位置編號1換成5
+        console.log(arr2);
+
+        // (3)['1','2','3']
+        let arr3=["1","2","3"];
+        console.log(arr3);
+
+        //(5)[1,"2",true,Array(0),{...}]    
+        let arr4=[1,"2",true,[],{book:"js"}]; //length:5
+        console.log(arr4);
+        console.log(typeof(arr4)); //object
+    </script>
+</body>
+</html>
