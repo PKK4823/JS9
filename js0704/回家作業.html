@@ -10,14 +10,12 @@
 <body>
     <h2>亂數 - Math.random</h2>
     <script>
-        // 取亂數0-1之間
-        // var rd =Math.random()*2; //回傳0,1
-        var rd = Math.random() * 100; //回傳
+        // 取亂數1-100之間
+        // var rd =Math.random()*2;=>會回傳0,1
+        // 所以亂數要去除小數後+1
+        var rd = Math.floor(Math.random() * 100)+1;
         var min = 1;
         var max = 100;
-
-        // 去除小數後+1
-        rd2 = Math.floor(rd) + 1;
 
         while (1) {
             var num = parseInt(prompt("猜數字(1-100)"));
@@ -27,12 +25,12 @@
                 break;
             }
 
-            if (num == rd2) {
+            if (num == rd) {
 
-                alert(`${rd2}=>恭喜你猜到了!`);
+                alert(`${rd}=>恭喜你猜到了!`);
                 break;
 
-            } else if (num > rd2) {
+            } else if (num > rd) {
 
                 if (num < max) {
                     max = num;
@@ -41,7 +39,7 @@
                 alert(`${num}=>太大了, 請重新輸入(提示:${min}-${max})`);
                 continue;
 
-            } else if (num < rd2) {
+            } else if (num < rd) {
 
                 if (num > min) {
                     min = num;
