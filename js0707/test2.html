@@ -14,11 +14,6 @@
         let min = 0;
         let max = 0;
 
-        // 下面要分段註解，測試過一個要把上一個方法給註解掉
-        // 不然會出錯
-        // 還可以改但我想在3點前交(寫太慢sorry)
-        // 我會慢慢改:)
-
         // for
         console.log("for----");
         for (let i = 0; i < arr1.length; i++) {
@@ -32,12 +27,17 @@
         }
         console.log(`max:${max} min:${min}`)
 
+
         // for of
         console.log("for of---");
+
+        min=0;//歸零
+        max=0;
+
         for (let n of arr1) {
              if (n > max) {
                 max = n;
-            } else if (n < min) {
+            } else if(n < min) {
                 min = n;
             } else {
                 min = n;
@@ -48,6 +48,10 @@
 
         // forEach
         console.log("forEach---");
+
+        min=0;//歸零
+        max=0;
+
         arr1.forEach((n) => {
             if (n > max) {
                 max = n;
