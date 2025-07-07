@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h2>顯示陣列中所有資料的方法</h2>
+    <h2>顯示陣列中資料是字串的方法</h2>
 
     <script>
         let arr1 = [1, 2, "a", 4, 5, "12345"];
@@ -43,9 +43,16 @@
             ...
         })
         */
-       console.log("forEach---");
+        console.log("forEach---");
         arr1.forEach((n) => {
             if (typeof (n) == "string") {
+                console.log(n);
+            }
+        })
+
+        // 方法4：map()
+        arr1.map((n) => {
+            if (typeof (n) == "string"){
                 console.log(n);
             }
         })
