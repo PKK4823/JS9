@@ -10,20 +10,22 @@
 <body>
     <script>
         // 找出陣列中最大值與最小值
-        let arr1 = [5, 60, 3, 90, 33, 1, 100];
-        let min = 0;
+        let arr1 = [5, 60, 3, 90, 33, 1, 100,20];
+        let min =0;
         let max = 0;
 
         // for
         console.log("for----");
         for (let i = 0; i < arr1.length; i++) {
-            if (arr1[i] > max) {
+
+            if(min==0){
+                min=arr1[i];
+            }else if (arr1[i] > max) {
                 max = arr1[i];
             } else if (arr1[i] < min) {
                 min = arr1[i];
-            } else {
-                min = arr1[i];
-        }
+            } 
+        
         }
         console.log(`max:${max} min:${min}`)
 
@@ -31,17 +33,18 @@
         // for of
         console.log("for of---");
 
-        min=0;//歸零
+        min = 0;//歸零
         max=0;
 
         for (let n of arr1) {
-             if (n > max) {
+             if(min==0){
+                min=n;
+            }else if (n > max) {
                 max = n;
-            } else if(n < min) {
+            } else if (n < min) {
                 min = n;
-            } else {
-                min = n;
-        }
+            } 
+        
         }
         console.log(`max:${max} min:${min}`)
 
@@ -49,17 +52,17 @@
         // forEach
         console.log("forEach---");
 
-        min=0;//歸零
+        min =0;//歸零
         max=0;
 
         arr1.forEach((n) => {
-            if (n > max) {
+            if(min==0){
+                min=n;
+            }else if (n > max) {
                 max = n;
             } else if (n < min) {
                 min = n;
-            } else {
-                min = n;
-        }
+            } 
         })
         console.log(`max:${max} min:${min}`)
 
