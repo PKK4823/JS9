@@ -20,7 +20,6 @@
     <p id="result"></p>
 
     <!-- 重新產生 -->
-    <!-- 這邊沒寫完，一直按確定也可以重新產生 -->
     <button id="rePlay" onclick="btnReset()" style="display: none;">重新產生</button>
 
     <script>
@@ -116,11 +115,14 @@
 
             }
 
-    
+            rePlay.style.display="block";
 
         }
 
-
+        function btnReset(){
+            rePlay.style.display="none";
+            btnClick();
+        }
 
 
 
