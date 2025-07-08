@@ -76,23 +76,24 @@
 
 
                 case "2"://大樂透
-                    while (count < 6) {
+                    while (count < 7) {
 
                         rd = Math.floor(Math.random() * 49) + 1;
 
-                        if (arr1.includes(rd) === false) {
+                       if (arr1.includes(rd) === false) {
                             arr1.push(rd);
                             count++;
                         }
 
                     }
+
+                    // 特別號
+                    arr2.push(arr1.pop());
+
                     result.innerHTML += `未排序為${arr1}<br>`; //未排序
                     arr1.sort((a, b) => a - b);
                     result.innerHTML += `遞增排序為:${arr1}<br>`; //已排序
-
-                    // 第二區
-                    arr2.push(Math.floor(Math.random() * 49) + 1);
-                    result.innerHTML += `第二區數字為:${arr2}<br>`;
+                    result.innerHTML += `特別號是:${arr2}<br>`;
                     break;
 
 

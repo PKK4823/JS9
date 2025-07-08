@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>找出陣列中的奇數值</h2>
+    <script>
+        let arr1 = [1, 6, 7, 100, 234];
+        let arr2 = [];
+        // 使用for
+        console.log("for------");
+        for (let i = 0; i < arr1.length; i++) {
+            if ((arr1[i] % 2) !== 0) {
+                arr2.push(arr1[i]);
+            }
+        }
+        console.log(arr2);
+
+        // 使用map，此題目不適合
+        console.log("map------");
+        arr2 = [];
+        arr1.map((n) => {
+            if (n % 2 !== 0) {
+                arr2.push(n);
+        }})
+        console.log(arr2);
+
+        // 使用filter()，只留下符合條件的元素
+        console.log("filter------");
+        let arr3 = arr1.filter((num)=>{
+            if(num%2 !== 0){
+                return true;
+            }
+        })
+
+        // 簡化
+        let arr4 = arr1.filter((num)=>{
+            return num % 2 == 1;
+        })
+        
+        // 再簡化
+        let arr5=arr1.filter((num)=>num%2 !==0)
+        console.log(arr4);
+
+
+        // 找出>=100的值
+        let arr6=arr1.filter((num)=>num>=100)
+        console.log(arr6);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr1=["Hydrogen", "Helium", "Lithium", "Beryllium"];
+
+        //(參數1, 參數2, …, 參數N){ return 表示式; } 
+        let x= arr1.map(function(arr){
+            return arr.length;
+        })
+        console.log(x);
+        
+        // 改寫成箭頭函式
+        // (參數1, 參數2, …, 參數N)=>表示式
+       let x2= arr1.map(arr=>arr.length);
+       console.log(x2);
+    </script>
+</body>
+</html>

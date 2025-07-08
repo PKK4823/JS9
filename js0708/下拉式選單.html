@@ -1,21 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <select id="type">
-    <option value="">請選擇樂透種類</option>
-    <option value="1">威力彩</option>
-    <option value="2">大樂透</option>
-    <option value="3">今彩</option>
-</select>
+        <option value="">請選擇樂透種類</option>
+        <option value="1">威力彩</option>
+        <option value="2">大樂透</option>
+        <option value="3">今彩</option>
 
-<script>
-    let typevalue=document.getElementById("type").value;
-    console.log(typevalue);
-</script>
+    </select>
+
+    <p id="result">結果</p>
+
+    <script>
+        let typeId = document.getElementById("type");//選單ID位置
+        let typevalue=0;//選單數值
+
+        let arr1 = [];
+        let arr2 = [];
+        let rd = 0;
+        let count = 0;
+
+        let result = document.getElementById("result");
+
+
+        typeId.addEventListener("change",btnClick);//抓選單數值
+
+        function btnClick(n){
+            typevalue=this.value;
+
+            // 
+            result.innerHTML = "";
+            arr1 = [];
+            arr2 = [];
+            rd = 0;
+            count = 0;
+            
+            switch(typevalue){
+                case "1":
+                    while (count < 6) {
+
+                        rd = Math.floor(Math.random() * 38) + 1;
+
+                        if (arr1.includes(rd) === false) {
+                            arr1.push(rd);
+                            count++;
+                        }
+
+                    }
+                    result.innerHTML += `未排序為${arr1}<br>`; //未排序
+                    arr1.sort((a, b) => a - b);
+                    result.innerHTML += `遞增排序為:${arr1}<br>`; //已排序
+
+                    // 第二區
+                    arr2.push(Math.floor(Math.random() * 8) + 1);
+                    result.innerHTML += `第二區數字為:${arr2}`;
+                    break;
+                    
+                case "2":
+                    while (count < 7) {
+
+                        rd = Math.floor(Math.random() * 49) + 1;
+
+                       if (arr1.includes(rd) === false) {
+                            arr1.push(rd);
+                            count++;
+                        }
+
+                    }
+
+                    // 特別號
+                    arr2.push(arr1.pop());
+
+                    result.innerHTML += `未排序為${arr1}<br>`; //未排序
+                    arr1.sort((a, b) => a - b);
+                    result.innerHTML += `遞增排序為:${arr1}<br>`; //已排序
+                    result.innerHTML += `特別號是:${arr2}<br>`;
+                    break;
+                
+                case "3":
+                    while (count < 5) {
+
+                        rd = Math.floor(Math.random() * 39) + 1;
+
+                        if (arr1.includes(rd) === false) {
+                            arr1.push(rd);
+                            count++;
+                        }
+
+                    }
+                    result.innerHTML += `未排序為${arr1}<br>`; //未排序
+                    arr1.sort((a, b) => a - b);
+                    result.innerHTML += `遞增排序為:${arr1}<br>`; //已排序
+
+                    break;
+            }
+
+           
+        }
+
+
+
+        
+
+    </script>
 </body>
+
 </html>
