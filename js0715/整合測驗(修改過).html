@@ -9,10 +9,8 @@
 
 <body>
     <script>
-        // 寫完了才想起來字串可以直接用[]指定
-        // 用了很多此一舉的Array.from字串轉陣列去判斷
-        // 還有其他寫的很冗長的程式碼這一個版本沒有特別改過，改過的在隔壁=>
-    
+       
+
         function printMany() {
             for (let i = 1; i <= 100; i++) {
                 console.log(i);
@@ -34,27 +32,31 @@
         }
 
         function isUpperCase(str) {
-            let arr = Array.from(str);
+
             if(str.trim().length==0){
                 return false;
-            }else if (arr[0] === arr[0].toUpperCase()) {
-                return true;
-            } else {
-                return false;
             }
-        }
+            return str[0]===str[0].toUpperCase();
+            // else if (arr[0] === arr[0].toUpperCase()) {
+            //     return true;
+            // } else {
+            //     return false;
+            // }
+        }	
 
        		
         function isAllUpperCase(str) {
             if(str.trim().length==0){
                 return false;
             }
-            else if (str === str.toUpperCase()) {
-                return true;
-            } else {
-                return false;
-            }
+            return str===str.toUpperCase();
+            // else if (str === str.toUpperCase()) {
+            //     return true;
+            // } else {
+            //     return false;
+            // }
         }
+
 
         function position(str) {
             let arr = Array.from(str);
@@ -70,6 +72,8 @@
             return -1;
             
         }
+
+
 
         function findSmallCount(arr, num) {
             let result = 0;
