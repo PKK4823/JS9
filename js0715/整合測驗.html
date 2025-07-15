@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+       
+
+        function printMany() {
+            for (let i = 1; i <= 100; i++) {
+                console.log(i);
+            }
+        }
+
+        function printEvery3() {
+            for (let i = 1; i <= 88; i += 3) {
+                console.log(i);
+            }
+        }
+
+        function stars(n) {
+            let star = "";
+            for (let i = 1; i <= n; i++) {
+                star += "*";
+            }
+            console.log(star);
+        }
+
+        function isUpperCase(str) {
+            let arr = Array.from(str);
+            if(str===""){
+                return false;
+            }else if (arr[0] === arr[0].toUpperCase()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+       		
+        function isAllUpperCase(str) {
+            if(str===""){
+                return false;
+            }
+            else if (str === str.toUpperCase()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function position(str) {
+            let arr = Array.from(str);
+            let found = 0;
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === arr[i].toUpperCase()) {
+                    result = `${arr[i]} ${i}`;
+                    console.log(result);
+                    found++;
+                    break
+                }
+                if (!found) {
+                    return -1;
+                }
+            }
+        }
+
+        function findSmallCount(arr, num) {
+            let result = 0;
+
+            for (let i=0; i < arr.length; i++) {
+                if (arr[i] < num) {
+                    result++;
+                }
+            }
+
+            return result;
+        }
+
+        function findSmallerTotal(arr,num){
+            let result = 0;
+
+            for (let i=0; i < arr.length; i++) {
+                if (arr[i] < num) {
+                    result+=arr[i];
+                }
+            }
+
+            return result;
+        }
+        
+        function findAllSmall(arr,num){
+            let result=[];
+            for(let i=0;i<arr.length;i++){
+                if (arr[i] < num) {
+                    result.push(arr[i]);
+                }
+            }
+            return result;
+        }
+        
+        function sum(arr){
+            let result=0;
+            for(let i=0;i<arr.length;i++){
+               result+=arr[i];
+            }
+            return result;
+
+        }
+
+    </script>
+</body>
+
+</html>
